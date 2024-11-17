@@ -1,5 +1,5 @@
-from fastapi import FastAPI
 import uvicorn
+from fastapi import FastAPI
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -11,14 +11,14 @@ def read_root():
 
 
 class JournalEntry(BaseModel):
-    role: str
+    date: int
     journal: str
-    goal: str
-    progress: str
 
 
 class JournalInput(BaseModel):
-    inputs: JournalEntry
+    journal: str
+    role: str
+    goal: str
 
 
 @app.post("/update_progress")
@@ -27,6 +27,6 @@ async def create_journal(input_data: JournalInput):
     print(journal_entry)
     return {"output": "updated progress"}
 
+
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
-
