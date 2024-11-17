@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cookie Clicker</title>
+    </head>
+    <body>
+        <button id="cookieButton">Cookie Clicker</button>
+        <p>Cookies: <span id="cookieCount">0</span></p>
+
+        <script>
+            let count = 0;
+            const button = document.getElementById("cookieButton");
+            const display = document.getElementById("cookieCount");
+
+            button.addEventListener("click", () => {
+                count++;
+                display.textContent = count;
+            });
+        </script>
+    </body>
+</html>
