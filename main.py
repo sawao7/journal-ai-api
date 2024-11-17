@@ -1,15 +1,4 @@
-# {
-#     "inputs": {
-#         "role": "string",
-#         "journal": "string",
-#         "goal": "string",
-#         "progress": "string",
-#     }
-# }
-
-# {"output":"string"}
-
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI
 import uvicorn
 from pydantic import BaseModel
 
@@ -32,7 +21,7 @@ class JournalInput(BaseModel):
     inputs: JournalEntry
 
 
-@app.post("/journal")
+@app.post("/update_progress")
 async def create_journal(input_data: JournalInput):
     journal_entry = input_data.inputs
     print(journal_entry)
