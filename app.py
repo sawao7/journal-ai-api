@@ -86,7 +86,44 @@ daily_journal_2 = {
 for goal in df["goal"]:
     update_progress(goal, daily_journal_2)
 
+daily_journal_3 = {
+    "date": "11/18/2024",
+    "journal": "I woke up at 10 am, and missed my class and the gym. I was kind of sad about ti but we moved on. I went to the lounge later on to study for my upcoming midterm 3 days after. After studying for 4 hours, I went back to my room and watched netflix. At 7 pm, I worked during my shift and was done by 11 pm. I was too tired to do anything so I slept right after taking a shower."
+}
+daily_journal_4 = {
+    "date": "11/19/2024",
+    "journal": "Woke up at 8 am, went to the gym, then had class. Grabbed lunch with friends and studied for midterms in the afternoon. Had dinner, finished assignments, then hit the library until 9 pm. Relaxed and watched Netflix before bed at midnight."
+}
+daily_journal_5 = {
+    "date": "11/20/2024",
+    "journal": "Snoozed my alarm and missed the gym. Went to class, studied for midterms, and took a break with a walk. Helped a friend with assignments, then had dinner and relaxed. Worked on assignments until bed at 11 pm."
+}
+daily_journal_6 = {
+    "date": "11/21/2024",
+    "journal": "Woke up late, missed the gym. Had class, studied at the library, and grabbed lunch with friends. Worked on a group project, then did a quick gym session. Dinner, then studied until 10 pm. Chilled with friends before bed at 12:30 am."
+}
+daily_journal_7 = {
+    "date": "11/22/2024",
+    "journal": "Started with a workout to calm nerves about the midterm. Had class, studied the rest of the day, and took a walk in the evening. Finished with a light dinner, last-minute review, then watched a movie to relax. Bed at 1 am."
+}
+
+for goal in df["goal"]:
+    update_progress(goal, daily_journal_3)
+
+for goal in df["goal"]:
+    update_progress(goal, daily_journal_4)
+
+for goal in df["goal"]:
+    update_progress(goal, daily_journal_5)
+
+for goal in df["goal"]:
+    update_progress(goal, daily_journal_6)
+
+for goal in df["goal"]:
+    update_progress(goal, daily_journal_7)
+
 for goal in df["goal"]:
     print(f"{goal}: {df.loc[df['goal'] == goal, 'progress'].iloc[0]}")
 
 print(df)
+
