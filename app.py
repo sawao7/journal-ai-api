@@ -127,3 +127,15 @@ for goal in df["goal"]:
 
 print(df)
 
+weekly_progress = ""
+for goal in df["goal"]:
+    if df.loc[df['goal'] == goal, 'progress'].iloc[0] == "":
+        df.loc[df['goal'] == goal, 'progress'].iloc[0] = "No progress made"
+    weekly_progress = weekly_progress + f"\nGoals: {goal}\nProgress: {df.loc[df['goal'] == goal, 'progress'].iloc[0]}"
+
+prompt_to_generate_suggestions = f"Below is the user’s goals and his progress over the week, provide few sentences of affirmations and another few sentences of suggestions."
+
+prompt_to_generate_suggestions = prompt_to_generate_suggestions + weekly_progress
+
+suggestions = open_ai_call(prompt_to_generate_suggestions)
+print(suggestions)
