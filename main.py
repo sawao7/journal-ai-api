@@ -16,7 +16,7 @@ class JournalEntry(BaseModel):
 
 
 class JournalInput(BaseModel):
-    journal: str
+    journal: JournalEntry
     role: str
     goal: str
 
