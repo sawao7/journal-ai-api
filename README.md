@@ -1,6 +1,7 @@
 # for API
-## Request format
 
+## Request format
+`update_progress`
 {
      "inputs": {
          "role": "string",
@@ -10,7 +11,10 @@
     }
 }
 ## Output format
+`update_progress`
 {"output":"string"}
+
+## 
 
 # install
 python version: ^3.9
